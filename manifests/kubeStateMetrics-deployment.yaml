@@ -27,9 +27,9 @@ spec:
     spec:
       containers:
       - args:
-        - --host=20.228.180.8
+        - --host=20.232.207.34
         - --port=8081
-        - --telemetry-host=20.228.180.8
+        - --telemetry-host=20.232.207.34
         - --telemetry-port=8082
         image: k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.3.0
         name: kube-state-metrics
@@ -46,7 +46,7 @@ spec:
         - --logtostderr
         - --secure-listen-address=:8443
         - --tls-cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
-        - --upstream=20.228.180.8:8081/
+        - --upstream=20.232.207.34:8081/
         image: quay.io/brancz/kube-rbac-proxy:v0.11.0
         name: kube-rbac-proxy-main
         ports:
@@ -67,7 +67,7 @@ spec:
         - --logtostderr
         - --secure-listen-address=:9443
         - --tls-cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
-        - --upstream=http://127.0.0.1:8082/
+        - --upstream=http://20.232.207.34:8082/
         image: quay.io/brancz/kube-rbac-proxy:v0.11.0
         name: kube-rbac-proxy-self
         ports:
